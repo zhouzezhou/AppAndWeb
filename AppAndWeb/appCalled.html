@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="utf8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>我是周周周啊</title>
+		<link rel="shortcut icon" href="img/favicon.ico" />
+
+		<script type="text/javascript">
+			function receive2App(appInfo) {
+				document.getElementById("label").innerText += "\n" + appInfo;
+			}
+
+			function callApp() {
+				var myDate = new Date();
+				window.webkit.messageHandlers.callApp.postMessage(myDate.toString());
+			}
+		</script>
+
+		<style>
+			body {
+				height: 90%;
+				width: 90%;
+				background-color: #F2F2F2;
+			}
+
+			.btn {
+				height: 40px;
+				width: 100%;
+				color: white;
+				background-color: orange;
+				font-size: 15px;
+			}
+
+			.label {
+				background-color: lightgray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<label id="label" class="label">App信息：</label>
+		<button class="btn" onclick="callApp()">网页调用App，同时传参</button>
+	</body>
+</html>
